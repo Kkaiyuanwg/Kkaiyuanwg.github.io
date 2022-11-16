@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Rating Field</title>
+    <link rel="stylesheet" type="text/css" href="http://dev.sencha.com/deploy/ext-4.1.0-gpl/resources/css/ext-all.css"/>
+   <!--link rel="stylesheet" type="text/css" href="https://raw.github.com/krikrou/Ext.ux.widget.Rating/master/src/Ext.ux.widget.Rating.css"/-->
+<style type="text/css">
+.x-form-rating .ux-rating-star, .x-form-rating .ux-rating-reset {
+  float: left;
+  width: 17px;
+  height: 15px;
+  text-indent: -999em;
+  cursor: pointer;
+  display: block;
+  background: transparent;
+  overflow: hidden;
+}
+/* line 22, ../../scss/form/rating.scss */
+.x-form-rating .ux-rating-star {
+  background: transparent!important;
+  overflow: hidden !important;
+}
+/* line 26, ../../scss/form/rating.scss */
+.x-form-rating .ux-rating-reset, .x-form-rating .ux-rating-reset a {
+  background: url(https://raw.github.com/krikrou/Ext.ux.widget.Rating/master/src/img/delete.gif) no-repeat 0 0px;
+}
+/* line 29, ../../scss/form/rating.scss */
+.x-form-rating .ux-rating-star, .x-form-rating .ux-rating-star a {
+  background: url(https://raw.github.com/krikrou/Ext.ux.widget.Rating/master/src/img/star.gif) no-repeat 0 0px;
+}
+/* line 32, ../../scss/form/rating.scss */
+.x-form-rating .ux-rating-star a, .x-form-rating .ux-rating-reset a {
+  display: block;
+  width: 16px;
+  height: 100%;
+  background-position: 0 0px;
+}
+/* line 38, ../../scss/form/rating.scss */
+.x-form-rating .ux-rating-star-on a {
+  background-position: 0 -16px !important;
+}
+/* line 41, ../../scss/form/rating.scss */
+.x-form-rating .ux-rating-star-focus .ux-rating-star-on a {
+  background-position: 0 -32px !important;
+}
+/* line 44, ../../scss/form/rating.scss */
+.x-form-rating .ux-rating-star-hover a {
+  background-position: 0 -32px;
+}
+/* line 47, ../../scss/form/rating.scss */
+.x-form-rating .ux-rating-reset-hover {
+  background-position: 0 -16px !important;
+}
+/* line 50, ../../scss/form/rating.scss */
+.x-form-rating .ux-rating-star-disabled a {
+  cursor: default !important;
+}
+/* line 54, ../../scss/form/rating.scss */
+.x-form-rating .x-item-disabled .ux-rating-star, .x-form-rating .x-form-readonly .ux-rating-star {
+  opacity: 0.6;
+  cursor: auto;
+}
+/* line 58, ../../scss/form/rating.scss */
+.x-form-rating .x-item-disabled .ux-rating-reset, .x-form-rating .x-form-readonly .ux-rating-reset {
+  display: none;
+}
+/* line 62, ../../scss/form/rating.scss */
+.x-form-rating .ext-ie .ux-rating-clearfix {
+  zoom: 1;
+}
+/* line 65, ../../scss/form/rating.scss */
+.x-form-rating .ux-rating-clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* line 72, ../../scss/form/rating.scss */
+.x-form-rating .x-form-invalid-icon {
+  background-position: 0 2px;
+}
+/* line 75, ../../scss/form/rating.scss */
+.x-form-rating .ux-rating-container {
+  height: 22px;
+  padding-top: 2px;
+}
+</style>
+    <script type="text/javascript" src="http://dev.sencha.com/deploy/ext-4.1.0-gpl/ext-all.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/krikrou/Ext.ux.widget.Rating/master/src/Ext.ux.widget.Rating.js"></script>
+    
+    <script>
+Ext.onReady(function() {    
+     
+	var rating = new Ext.ux.widget.Rating({
+				fieldLabel	:	'a rating test',
+				allowBlank	: false,
+				//disabled	: true,
+				//readOnly	: true,
+				value 		: 2.6,
+				titles: {
+						'0': 'poor', 
+						'1.4': 'medium',
+						'3': 'excellent',
+						'5': 'perfect'
+					},
+				allowBlank	:	false
+		    });
+
+	var form = new Ext.form.Panel( {
+		layout			:	'anchor',
+		//frame			:	true,
+		defaultType		:	'textfield',
+		bodyStyle		:	'padding: 16px',
+		labelWidth		:	126,
+		items			:	[
+		    {
+				fieldLabel	:	'First Field',
+				emptyText: 'enter smth'
+				
+		    },
+		   rating, 
+		    {
+				fieldLabel	:	'Second Field',
+		    },
+ {
+				fieldLabel	:	'Last Field',
+		    }
+		]
+	   
+	});
+	var window = new Ext.window.Window({
+			title	:	'A new Rating Field',
+			layout	:	'fit',
+			items	:	[form]
+		}).show();
+		
+});    
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
