@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+@font-face {
+    font-family: 'title'; /*a name to be used later*/
+    src: url('title.otf'); /*URL to font*/
+}
+
+/* Reset */
+a {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+/* Main Styling */
+html,
+body {
+	font-family: "Rubik", sans-serif;
+	list-style: none;
+	text-decoration: none;
+	align-items: center;
+	justify-content: center;
+}
+
+h2 {
+	font-family: "title";
+	font-size: 1.3rem;
+	text-align: center;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: 500;
+	padding-bottom: 10px;
+}
+
+h4 {
+	font-size: 1rem;
+	text-transform: uppercase;
+	padding-bottom: 10px;
+	font-weight: 500;
+}
+
+p {
+	font-family: "Rubik", sans-serif;
+	font-size: 1rem;
+	margin: 10px 0;
+	line-height: 1.7em;
+}
+
+
+.typetitle {
+    align-items: center;
+	font-size: 40px;
+	margin-left: 10%;
+	text-align: center;
+	color: white;
+	filter: opacity(95%);
+	vertical-align:middle;
+}
+  
+.trans {
+	box-shadow: inset 0 0 0 0 #458aeb69;
+	margin-left: 10px;
+	color: #458aeb69;
+	transition: color .1s ease-in-out, box-shadow .2s ease-in-out;
+	border-radius: 3px;
+}
+
+.container {
+	height: 100px;
+}
+
+.trans:hover {
+	box-shadow: inset 0 0 100px 100px #458aeb69;
+  	color: white;
+}
+
+
+/* Utility Classes */
+.container {
+	overflow: hidden;
+	height: auto;
+	text-anchor: middle;
+	vertical-align: middle;
+}
+
+.container2 {
+    display: block;
+	overflow: hidden;
+	height: 200px;
+	text-decoration:none;
+	text-anchor: middle;
+}
+
+.large {
+	font-size: 20px;
+}
+
+#showcase {
+	background-image: url("img/wp2.jpg");
+	background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   border-radius: 15px;
+   height: fit-content;
+   box-shadow: 5px 5px 25px;
+}
+
+
+.btn {
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+    transform: translateX(50px);
+	font-size: 9px;
+    padding: 5px;
+	letter-spacing: 1px;
+	transition: 0.2s;
+}
+
+.btn-outline {
+	background: #458aeb9d;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 300;
+	border-radius: 4px;
+}
+
+.btn-outline:hover {
+	background: #f02c569d;
+	color: white;
+	top: 49%;
+}
+
+.change{
+	animation: colchange 5s cubic-bezier(0.47, 0, 0.745, 0.715);
+	animation-iteration-count: infinite;
+}
+
+@keyframes colchange{
+	100%, 0%{
+		color: #ec6381;
+	}
+
+	50%{
+		color: #70a2e9;
+	}
+
+}
+
+
+/* Navbar */
+#navbar {
+	overflow: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#navbar a {
+	color: #000;
+}
+
+#navbar .logo {
+	float: left;
+	padding-top: 12px;
+}
+
+#navbar img {
+	height: 30px;
+}
+
+#navbar ul {
+    font-size: 10px;
+	list-style: none;
+	float: right;
+}
+
+#navbar ul li {
+	float: left;
+}
+
+#navbar ul li a {
+	display: block;
+	padding: 10px;
+	text-align: center;
+}
+
+/* Projects */
+#projects {
+	padding: 80px 0;
+}
+
+.projects-row {
+
+	text-align: center;
+	align-self: middle;
+	margin: auto;
+	height: auto;
+}
+
+.projects-row img {
+	height: auto;
+	transition: 0.2s;
+	border-radius: 3px;
+}
+
+.projects-row img:hover {
+	border-radius: 10px;
+	transform: scale(1.1);
+}
+
+.projects-row-detail {
+	margin: 7px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+/* About */
+#about {
+	padding: 80px 0;
+	background: #f9f9f9;
+}
+
+.about-row {
+	display: flex;
+}
+
+.about-row-experience,
+.about-row-me {
+    text-align: center;
+	width: 50%;
+	padding: 0px;
+}
+
+
+/* Contact */
+#contact {
+	padding: 80px 0;
+}
+
+.contact-row {
+	display: flex;
+}
+.contact-row-icon {
+	width: 33%;
+	text-align: center;
+}
+
+.contact-row-icon img {
+	height: 60px;
+}
+
+/* Footer */
+#mainfooter {
+	background: #f9f9f9;
+	text-align: center;
+	padding: 30px;
+}
+
+html {
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  opacity: 0.1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.cards {
+    height: 100px;
+}
+
+.contact-row p {
+    font-size: 10px;
+}
