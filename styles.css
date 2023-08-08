@@ -1,0 +1,172 @@
+/* Estilos generales */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+    color: #fff;
+    overflow-y: scroll; /* Permitir desplazamiento vertical */
+}
+
+/* Encabezado de pantalla completa */
+header {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+    opacity: 0;
+    background-image: url('bgif.gif'); /* Ruta de tu GIF de fondo */
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Superposición semitransparente */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: -1;
+    backdrop-filter: blur(10px); /* Aplicar desenfoque al fondo detrás del elemento */
+    pointer-events: none;
+
+}
+
+.contenido {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Cambio en la dirección del eje principal */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+}
+
+.mostrar {
+    opacity: 1;
+}
+
+.nombre {
+    font-size: 5rem;
+    margin: 0;
+    transform: translateY(-100%);
+    animation: slideIn 1.5s ease-in-out forwards;
+    filter: blur(10px); /* Aplicar desenfoque inicial */
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.texto-adicional {
+    font-size: 1.5rem;
+    align-items: center;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out forwards 1s; /* Aparecer después de 2 segundos */
+}
+
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fondo de animación */
+.fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-size: cover;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+body.loaded header {
+    opacity: 1;
+}
+
+/* Menú de navegación */
+nav {
+    background-color: #444;
+}
+
+.menu {
+    list-style: none;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 0 1rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Proyectos */
+.proyectos {
+    background-color: #333;
+    color: #fff;
+}
+
+.proyecto {
+    padding: 2rem;
+    border: 1px solid #fff;
+    margin: 1rem;
+}
+
+/* Acerca de */
+.acerca {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Contacto */
+.contacto {
+    background-color: #555;
+    color: #fff;
+}
+
+.flecha {
+    margin-top: 2rem;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out forwards 1s, bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
