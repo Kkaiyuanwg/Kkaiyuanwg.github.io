@@ -1,87 +1,34 @@
-var container = document.getElementById("contenido"),
-inner = document.getElementById("bodyy");
 
-inner.addEventListener("mousemove", e => forever(e));
+const proyectos = document.querySelectorAll('.proyectos');
 
-function forever(e){
+document.addEventListener('mousemove', (e) => {
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
 
+    const deltaX = (mouseX - centerX) * 0.01; // Ajusta el factor para controlar la intensidad del efecto
+    const deltaY = (mouseY - centerY) * 0.01;
 
-  // Mouse
-  var mouse = {
-    _x: 0,
-    _y: 0,
-    x: 0,
-    y: 0,
-    updatePosition: function(event) {
-      var e = event || window.event;
-      this.x = e.clientX - this._x;
-      this.y = (e.clientY - this._y) * -1;
-    },
-    setOrigin: function(e) {
-      this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
-      this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
-    },
-    show: function() {
-      return "(" + this.x + ", " + this.y + ")";
-    }
-  };
+    proyectos.forEach((proyecto) => {
+        const parallaxX = deltaX * -1;
+        const parallaxY = deltaY * -1;
 
-  // Track the mouse position relative to the center of the container.
-  mouse.setOrigin(container);
-
-  //----------------------------------------------------
-
-  var counter = 0;
-  var refreshRate = 10;
-  var isTimeToUpdate = function() {
-    return counter++ % refreshRate === 0;
-  };
-
-  //----------------------------------------------------
-
-  var onMouseEnterHandler = function(event) {
-    update(event);
-  };
-
-  var onMouseLeaveHandler = function() {
-    inner.style = "";
-  };
-
-  var onMouseMoveHandler = function(event) {
-    if (isTimeToUpdate()) {
-      update(event);
-    }
-  };
-
-  //----------------------------------------------------
-
-  var update = function(event) {
-    mouse.updatePosition(event);
-    updateTransformStyle(
-      (mouse.y / inner.offsetHeight / 2).toFixed(2),
-      (mouse.x / inner.offsetWidth / 2).toFixed(2)
-    );
-  };
-
-  var updateTransformStyle = function(x, y) {
-    var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
-    inner.style.transform = style;
-    inner.style.webkitTransform = style;
-    inner.style.mozTranform = style;
-    inner.style.msTransform = style;
-    inner.style.oTransform = style;
-  };
-
-  //--------------------------------------------------------
-
-  container.onmousemove = onMouseMoveHandler;
-  container.onmouseleave = onMouseLeaveHandler;
-  container.onmouseenter = onMouseEnterHandler;
-
-  console.log("bruh")
-};
+        proyecto.style.transform = `translate(${parallaxX}px, ${parallaxY}px)`;
+    });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    new Swiper('.swiper', {
+        direction: 'horizontal', // Set the direction to vertical
+            // Enable loop
+        navigation: {
+            prevEl: '.swiper-button-prev', // Previous button selector
+            nextEl: '.swiper-button-next'  // Next button selector
+        },
+        // Additional Swiper settings
+    });
     const secciones = document.querySelectorAll(".contenido");
 
     function mostrarSeccion(seccionIndex) {
