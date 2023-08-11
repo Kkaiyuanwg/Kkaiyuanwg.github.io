@@ -9,7 +9,6 @@ body {
     overflow-y: scroll; /* Permitir desplazamiento vertical */
 }
 
-/* Encabezado de pantalla completa */
 header {
     text-align: center;
     color: #fff;
@@ -38,18 +37,14 @@ header::before {
     background-color: rgba(0, 0, 0, 0.85);
     z-index: -1;
     backdrop-filter: blur(10px); /* Aplicar desenfoque al fondo detrás del elemento */
-
-
 }
 
 .contenido {
     width: 100%;
     height: 100vh;
     display: flex;
-    flex-direction: column; /* Cambio en la dirección del eje principal */
-    align-items: center;
-    justify-content: center;
     opacity: 0;
+    align-items: center;
     position: absolute;
     transition: opacity 1s ease-in-out;
 }
@@ -131,48 +126,3 @@ nav {
     background-color: #444;
 }
 
-
-/* Proyectos */
-.proyectos {
-    background-color: #1f1f1f8a;
-    color: #fff;
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column; /* Alinear elementos verticalmente */
-    align-items: center; /* Centrar horizontalmente */
-    z-index: 3;
-    justify-content: center;
-}
-
-.proyecto {
-    padding: 2rem;
-    margin: 1rem;
-    position: relative;
-    border: 1px solid transparent;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar sombra al pasar el ratón */
-    border: 1px solid transparent;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.proyecto:hover {
-    transition: 0.5s;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Cambiar la sombra al pasar el ratón */
-    transform: translateY(-5px); /* Levantar el cuadro ligeramente */
-}
-
-.proyecto::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente al pasar el ratón */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.proyecto:hover::before {
-    opacity: 1;
-}

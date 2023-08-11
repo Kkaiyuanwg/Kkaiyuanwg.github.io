@@ -1,4 +1,3 @@
-
 const proyectos = document.querySelectorAll('.proyectos');
 
 document.addEventListener('mousemove', (e) => {
@@ -20,15 +19,6 @@ document.addEventListener('mousemove', (e) => {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    new Swiper('.swiper', {
-        direction: 'horizontal', // Set the direction to vertical
-            // Enable loop
-        navigation: {
-            prevEl: '.swiper-button-prev', // Previous button selector
-            nextEl: '.swiper-button-next'  // Next button selector
-        },
-        // Additional Swiper settings
-    });
     const secciones = document.querySelectorAll(".contenido");
 
     function mostrarSeccion(seccionIndex) {

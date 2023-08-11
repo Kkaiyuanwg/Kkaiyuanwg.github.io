@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/carousel.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.7.0.js"
+    integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="script.js"></script>
     <title>Kkai Kkai Kkai Kkai Kkai Kkai Kkai</title>
 </head>
-<body id="bodyy">
-    <header class="contenido">
-        <section class="newnew">
+<body>
+    <header class="contenido" style="flex-direction: column; justify-content: center;">
+        <section class="header">
             <p class="texto-adicional">Hello, this is</p>
             <h1 class="nombre">Kkai</h1>
             <div class="flecha"><i class="fas fa-chevron-down"></i></div>
         </section>
     </header>
     <section class="contenido">
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="proyecto">
-                        <h3>Email sender</h3>
-                        <p>Descripción del Proyecto 1</p>
-                    </div>
+        <section class="game-section" style="z-index: 3;">
+            <h2 class="line-title">My projects</h2>
+            <div class="owl-carousel custom-carousel owl-theme">
+              <div class="item active" style="background-image: url();">
+                <div class="item-desc">
+                  <h3>Email Sender</h3>
+                  <p>A fully python CLI, GUI and app that lets you send emails easily.</p>
                 </div>
-                <div class="swiper-slide">
-                    <div class="proyecto">
-                        <h3>Proyecto 2</h3>
-                        <p>Descripción del Proyecto 2</p>
-                    </div>
+              </div>
+              <div class="item" style="background-image: url();">
+                <div class="item-desc">
+                  <h3>IP-info</h3>
+                  <p>A python GUI to make looking your IP's info easier</p>
                 </div>
-                <!-- Add more slides here -->
+              </div>
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
+            </div>
+        </section>
+        <script src="assets/scriptq.js"></script>
     </section>
-
-    
-        <!-- Agrega más secciones según tus proyectos -->
     
     <div class="fondo"></div>
 </body>

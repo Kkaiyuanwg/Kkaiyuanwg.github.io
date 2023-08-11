@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "tiny-slider": "^2.9.4",
+    "tns": "^0.2.0"
+  }
+}
