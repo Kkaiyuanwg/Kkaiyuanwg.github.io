@@ -7,8 +7,11 @@ body {
     background-color: #000;
     color: #fff;
     overflow-y: scroll; /* Permitir desplazamiento vertical */
+    cursor: none;
 }
-
+body::-webkit-scrollbar {
+    display: none;
+}
 header {
     text-align: center;
     color: #fff;
@@ -39,6 +42,21 @@ header::before {
     backdrop-filter: blur(10px); /* Aplicar desenfoque al fondo detrás del elemento */
 }
 
+#circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    opacity: 90%;
+    -webkit-mask:radial-gradient(circle at 50% 50%, #fff , transparent 200%);
+    mask:radial-gradient(circle at 50% 50%, #fff , transparent 200%);
+    backdrop-filter: invert(80%) blur(1px);
+    position: absolute;
+    z-index: 999;
+    transform: translateY(-100%) translateX(-100%);
+    animation: enter 1s ease-out;
+}
+
+
 .contenido {
     width: 100%;
     height: 100vh;
@@ -56,6 +74,7 @@ header::before {
 .nombre {
     font-size: 5rem;
     margin: 0;
+    mix-blend-mode: difference;
     transform: translateY(-100%);
     animation: slideIn 1.5s ease-in-out forwards;
     filter: blur(10px); /* Aplicar desenfoque inicial */

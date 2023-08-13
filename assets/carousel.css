@@ -57,28 +57,25 @@ button {
 /******* Common Element CSS End *********/
 
 /* -------- title style ------- */
-.line-title {
-  position: relative;
-  width: 400px;
-}
-.line-title::before,
-.line-title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 4px;
-  border-radius: 2px;
-}
-.line-title::before {
-  width: 100%;
-  background: #f2f2f2;
-}
-.line-title::after {
-  width: 32px;
-  background: #e73700;
+
+
+.contenido .text-transition {
+
+  transform: translateX(-100%);
 }
 
+@keyframes slideIn {
+  to {
+      transform: translateX(0);
+      filter: blur(0);
+  }
+}
+
+.mostrar .text-transition {
+  animation: slideIn 1s ease-in-out forwards;
+  animation-play-state: paused;
+  animation-delay: calc(attr(scroll)* -1s);
+}
 /******* Middle section CSS Start ******/
 /* -------- Landing page ------- */
 .game-section {
@@ -91,7 +88,7 @@ button {
 }
 .game-section .item {
   margin: 0 15px 60px;
-  width: 320px;
+  width: 400px;
   height: 400px;
   display: flex;
   display: -webkit-flex;
@@ -103,7 +100,6 @@ button {
   position: relative;
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
-  cursor: pointer;
 }
 .game-section .item.active {
   width: 500px;
