@@ -15,7 +15,7 @@
     margin: 5px 0;
     opacity: 100%;
 
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 1s ease-in-out;
 }
 .indicador.activo {
     background-color: aquamarine;
