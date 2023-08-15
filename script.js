@@ -43,6 +43,11 @@ window.addEventListener('scroll', () => {
 }, false);
 
 document.addEventListener("DOMContentLoaded", function () {
+    
+    const btns = document.querySelectorAll(".owl-dot");
+    btns.forEach((btn) => {
+        btn.setAttribute('aria','Button');
+    });
 
     const secciones = document.querySelectorAll(".contenido");
 
