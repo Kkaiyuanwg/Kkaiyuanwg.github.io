@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const btns = document.querySelectorAll(".owl-dot");
     btns.forEach((btn) => {
-        btn.setAttribute('aria','Button');
+        btn.setAttribute('aria-label','Carousel button');
     });
 
     const secciones = document.querySelectorAll(".contenido");
