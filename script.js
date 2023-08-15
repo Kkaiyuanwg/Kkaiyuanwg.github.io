@@ -1,4 +1,4 @@
-const proyectos = document.querySelectorAll('.proyectos');
+const proyectos = document.querySelectorAll('.gamesec');
 
 let currentX = 0;
 let currentY = 0;
@@ -6,7 +6,7 @@ let followSpeed = 0.1;
 
 function updateCirclePosition(targetX, targetY) {
     gsap.to(circle, {
-      duration: 0.7, // Adjust this duration for the follow speed
+      duration: 0.25, // Adjust this duration for the follow speed
       x: targetX - 15,
       y: targetY - 15,
       ease: 'power3.out' // Adjust the easing for desired effect
@@ -20,8 +20,8 @@ document.addEventListener('mousemove', (e) => {
     const x = e.clientX;
     const y = e.clientY;
   
-    updateCirclePosition(x - 15, y - 15);
-
+    updateCirclePosition(x + 3, y + 3);
+    circle2.style.transform = `translate(${x}px, ${y}px)`;
     circle.style.display = 'block';
 
     const deltaX = (x - centerX) * 0.01; // Ajusta el factor para controlar la intensidad del efecto
@@ -35,9 +35,7 @@ document.addEventListener('mousemove', (e) => {
     });
 });
 
-window.addEventListener('mouseout', () => {
-    circle.style.display = 'none';
-  });
+
 
 window.addEventListener('scroll', () => {
     document.getElementById("movtxt").setAttribute('scroll', window.scrollY / (document.body.offsetHeight - window.innerHeight));
@@ -47,7 +45,6 @@ window.addEventListener('scroll', () => {
 document.addEventListener("DOMContentLoaded", function () {
 
     const secciones = document.querySelectorAll(".contenido");
-    const textTransition = document.querySelector(".game-section h2");
 
     function mostrarSeccion(seccionIndex) {
         secciones.forEach((seccion, index) => {

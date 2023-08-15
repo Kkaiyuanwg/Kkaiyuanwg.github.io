@@ -60,21 +60,23 @@ button {
 
 
 .contenido .text-transition {
-
-  transform: translateX(-100%);
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: 1s;
 }
 
-@keyframes slideIn {
+@keyframes slideIn2 {
   to {
-      transform: translateX(0);
+      transform: translateX(1%);
       filter: blur(0);
+      opacity: 1;
   }
 }
 
 .mostrar .text-transition {
-  animation: slideIn 1s ease-in-out forwards;
-  animation-play-state: paused;
-  animation-delay: calc(attr(scroll)* -1s);
+  animation: slideIn2 1s ease-in-out forwards;
+  animation-play-state: running;
+
 }
 /******* Middle section CSS Start ******/
 /* -------- Landing page ------- */
