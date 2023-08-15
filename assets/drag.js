@@ -4,12 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
     let isDragging = false;
     let startY = 0;
     let endY = 0;
+    const indicadores = document.querySelectorAll(".indicador");
 
     function mostrarSeccion(seccionIndex) {
         secciones.forEach((seccion, index) => {
             seccion.classList.remove("mostrar");
             if (index === seccionIndex) {
                 seccion.classList.add("mostrar");
+            }
+        });
+
+        indicadores.forEach((indicador, index) => {
+            if (index === seccionIndex) {
+                indicador.classList.add("activo");
+            } else {
+                indicador.classList.remove("activo");
             }
         });
     }

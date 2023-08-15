@@ -1,0 +1,24 @@
+.indicadores {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    z-index: 998;
+    flex-direction: column;
+    align-items: center;
+}
+.indicador {
+    width: 3px;
+    height:  10px;
+    border-radius: 0%;
+    background-color: rgba(70, 70, 70, 0.5);
+    margin: 5px 0;
+    opacity: 100%;
+
+    transition: background-color 0.3s ease-in-out;
+}
+.indicador.activo {
+    background-color: aquamarine;
+    opacity: 50%;
+    backdrop-filter: invert(0%);
+}
