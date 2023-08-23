@@ -53,10 +53,9 @@ header::before {
     left: 0%;
     height: 100vh;
     width: 100%;
-    opacity: 15%;
+    opacity: 20%;
     object-fit: fill; 
     position: absolute;
-    filter: blur(29px);
 }
 
 #circle2 {
@@ -84,7 +83,6 @@ header::before {
     transform: translateY(-100%) translateX(-100%);
     animation: enter 1s ease-out;
 }
-
 
 .contenido {
     width: 100%;
